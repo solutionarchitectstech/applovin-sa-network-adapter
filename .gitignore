@@ -1,0 +1,17 @@
+# Ignore OS generated files and commons
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+*.tmp
+*.log
+*.swp
+tmp
+null
+*~
+
+# GIT specific
+!.gitkeep
+
+# IntelliJ
+*.iml
+.idea/

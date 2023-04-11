@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity(), MaxAdViewAdListener {
         setContentView(R.layout.activity_main)
         // Look this ad unit ids here: https://dash.applovin.com/o/mediation/ad_units/
         createBannerAd("YOUR_ADUNIT", R.id.banner1)
+        createBannerAd("YOUR_ADUNIT", R.id.banner2)
     }
 
     private var adView: MaxAdView? = null
@@ -26,11 +27,7 @@ class MainActivity : AppCompatActivity(), MaxAdViewAdListener {
     private fun createBannerAd(adUnit: String, bannerId: Int) {
         adView = MaxAdView(adUnit, this)
         adView?.setListener(this)
-        adView?.provideSolutionArchitectsBannerParams(
-            closeButtonType = CloseButtonType.Countdown(
-                3000
-            )
-        )
+        adView?.provideSolutionArchitectsBannerParams(closeButtonType = CloseButtonType.Countdown(30))
 
         // Stretch to the width of the screen for banners to be fully functional
         val width = resources.getDimensionPixelSize(R.dimen.banner_width)
@@ -56,17 +53,11 @@ class MainActivity : AppCompatActivity(), MaxAdViewAdListener {
     }
 
     override fun onAdLoadFailed(adUnitId: String?, error: MaxError?) {
-        Log.e(
-            "MainActivity",
-            "Max Ad Listener: onAdLoadFailed | placementId: $adUnitId | message:${error?.message}"
-        )
+        Log.e("MainActivity", "Max Ad Listener: onAdLoadFailed | placementId: $adUnitId | message:${error?.message}")
     }
 
     override fun onAdDisplayFailed(ad: MaxAd?, error: MaxError?) {
-        Log.e(
-            "MainActivity",
-            "Max Ad Listener: onAdDisplayFailed | placementId: ${ad?.placement}|  with message:${error?.message}"
-        )
+        Log.e("MainActivity", "Max Ad Listener: onAdDisplayFailed | placementId: ${ad?.placement}|  with message:${error?.message}")
     }
 
     override fun onAdClicked(maxAd: MaxAd) {

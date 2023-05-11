@@ -16,7 +16,7 @@ class AppLovinDemoApplication : Application() {
 
             provideSolutionArchitectsInitConfig(
                 storeUrl = "YOUR_STORE_URL",
-                uid = "YOUR_UID",
+                sessionId = "YOUR_SESSION_ID",
                 debugMode = true,
                 headers = mapOf("Authorization" to { "Bearer YOUR_BEARER_TOKEN" }),
                 bannerUrl = "https://YOUR_BANNER_ENDPOINT"

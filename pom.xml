@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>tech.solutionarchitects</groupId>
   <artifactId>adapters.applovin</artifactId>
-  <version>0.4.1.0</version>
+  <version>0.6.0.1</version>
   <packaging>aar</packaging>
   <build>
     <plugins>
@@ -19,7 +19,7 @@
     <dependency>
       <groupId>com.github.solutionarchitectstech</groupId>
       <artifactId>mobile_sdk_release</artifactId>
-      <version>0.4.1</version>
+      <version>0.6.0</version>
     </dependency>
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
